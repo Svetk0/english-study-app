@@ -1,6 +1,7 @@
 //import Header from './components/Header';
 import { useEffect }  from 'react';
-import Header from './components/Header';
+import Header from './components/header/Header';
+import Card from './components/card/CardWord';
 import './App.css';
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
   return (
     <div className="App-container">
       
-      <Header/>
+      <Header />
+      <Card />
     </div>
   );
 }

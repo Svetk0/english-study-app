@@ -1,0 +1,29 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(231, 204, 165);
+   
+    min-width: 80%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    
+}
+.card_word{
+    font-size: 3rem;
+    color: rgb(18, 85, 63);
+    font-weight: 500;
+    margin: 10vw 5px 10px 5px;
+}
+.card_transcription{
+    font-size: 1rem;
+    color: rgb(51, 36, 5);
+}
+
+.card_translate{
+    font-size: 1rem;
+    color: rgb(21, 20, 19);
+    margin: 100px;
+   
+}
