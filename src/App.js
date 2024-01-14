@@ -2,6 +2,7 @@
 import { useEffect }  from 'react';
 import Header from './components/header/Header';
 import Card from './components/card/CardWord';
+import TrainMode from './components/train-mode/TrainMode';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       
       <Header />
       <Card />
+      <TrainMode />
     </div>
   );
 }
