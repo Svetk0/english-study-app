@@ -18,7 +18,9 @@ const initialArrayCards = [
   { id: 3, img: pathIconShark },
   { id: 4, img: pathIconDog },
   { id: 5, img: pathIconTractor },
-  { id: 6, img: pathIconCake },
+    { id: 6, img: pathIconCake },
+   // { id: 7, img: pathIconCat },
+    //{ id: 8, img: pathIconWatermelon },
 ];
 // Double of cards
 const pairOfArrayCards = [...initialArrayCards, ...initialArrayCards];
@@ -36,10 +38,10 @@ function TrainMode() {
     let currentIndex = array.length;
     let temporaryValue = 0;
     let randomIndex = 0;
-    console.log("currIndex: " + currentIndex);
+   
 
     while (currentIndex > 0) {
-      console.log("currIndex: " + currentIndex);
+      //console.log("currIndex: " + currentIndex);
       randomIndex = Math.floor(Math.random() * currentIndex);
 
       currentIndex--;
@@ -84,7 +86,7 @@ function TrainMode() {
   return (
       <div className="trainMode_container">
           
-      {console.log({ arrayCards })}
+     
           <h1 className="tm-header">Train Mode</h1>
           <p className="numberSteps">Steps: { moves/2 }</p>
       <div className="cards">
@@ -117,7 +119,7 @@ function TrainMode() {
           );
         })}
       </div>
-      <button className="button-restart" onClick={handleGameRestart}>
+      <button className="button button-restart" onClick={handleGameRestart}>
         restart game
       </button>
     </div>

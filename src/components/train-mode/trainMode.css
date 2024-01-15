@@ -75,6 +75,7 @@
     transform: scale(0.98);
 }
 .button-restart {
+    width: 100%;
     cursor: pointer;
     margin: 30px 0;
     height: 30px;
