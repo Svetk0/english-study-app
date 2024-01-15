@@ -25,7 +25,6 @@ const pairOfArrayCards = [...initialArrayCards, ...initialArrayCards];
 
 console.log(pairOfArrayCards);
 
-
 function TrainMode() {
   const [arrayCards, setArrayCards] = useState([]);
   const [openedCards, setOpenedCards] = useState([]);
@@ -36,54 +35,93 @@ function TrainMode() {
   const shuffle = (array) => {
     let currentIndex = array.length;
     let temporaryValue = 0;
-      let randomIndex = 0;
-      console.log("currIndex: " + currentIndex);
+    let randomIndex = 0;
+    console.log("currIndex: " + currentIndex);
 
     while (currentIndex > 0) {
       console.log("currIndex: " + currentIndex);
       randomIndex = Math.floor(Math.random() * currentIndex);
 
       currentIndex--;
-      
+
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
     return array;
   };
+    
+    
   useEffect(() => {
     setArrayCards(shuffle(pairOfArrayCards));
   }, []);
 
-    return (
+  //check pair of cards
+  const flipCard = (index) => () => {
+    setOpenedCards((opened) => [...opened, index]);
+    setMoves((prevMove) => prevMove + 1);
+  };
+  useEffect(() => {
+    if (openedCards < 2) return;
+    const firstMatched = arrayCards[openedCards[0]];
+    const secondMatched = arrayCards[openedCards[1]];
 
-        <div className="trainMode_container">
-            {console.log({ arrayCards })}
-            <h1 className="tm-header">Train Mode</h1>
-            <div className="cards">
-                {arrayCards.map((item, index) => { 
-                    let isFlipped = false;
+    if (secondMatched && firstMatched.id === secondMatched.id) {
+      setMatched([...matched, firstMatched.id]);
+    }
 
-                    if (openedCards.includes(index)) isFlipped = true;
-                    if (matched.includes(item.id)) isFlipped = true;
-                    return (
-                        <div key={index} className={ `card ${isFlipped ? 'flipped' : ''}`}>
-                            <div className="inner">
-                                <div className="front">
-                                    <img className="image-card" src={ item.img} alt="front card" />
-                                </div>
-                                <div className="back">
-                                    <img className="image-card" src={ pathIconBackground} alt="card back-side" width={100} height={100} />
-                                </div>
-                            </div>
+    if (openedCards.length === 2) setTimeout(() => setOpenedCards([]), 1500);
+  }, [openedCards]);
 
-                        </div>
-                    )
-                })}
+  // restart the game
+    function handleGameRestart() {
+        setOpenedCards([]);
+        setMatched([]);
+        setMoves(0);
+        setArrayCards(shuffle(pairOfArrayCards));
+  }
+
+  return (
+      <div className="trainMode_container">
+          
+      {console.log({ arrayCards })}
+          <h1 className="tm-header">Train Mode</h1>
+          <p className="numberSteps">Steps: { moves}</p>
+      <div className="cards">
+        {arrayCards.map((item, index) => {
+          let isFlipped = false;
+
+          if (openedCards.includes(index)) isFlipped = true;
+          if (matched.includes(item.id)) isFlipped = true;
+          return (
+            <div
+              key={index}
+              className={`card ${isFlipped ? "flipped" : ""}`}
+              onClick={flipCard(index)}
+            >
+              <div className="inner">
+                <div className="front">
+                  <img className="image-card" src={item.img} alt="front card" />
+                </div>
+                <div className="back">
+                  <img
+                    className="image-card"
+                    src={pathIconBackground}
+                    alt="card back-side"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              </div>
             </div>
-            <button className="button-restart">restart game</button>
-
-        </div>);
+          );
+        })}
+      </div>
+      <button className="button-restart" onClick={handleGameRestart}>
+        restart game
+      </button>
+    </div>
+  );
 }
 
 export default TrainMode;
