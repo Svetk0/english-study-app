@@ -86,7 +86,7 @@ function TrainMode() {
           
       {console.log({ arrayCards })}
           <h1 className="tm-header">Train Mode</h1>
-          <p className="numberSteps">Steps: { moves}</p>
+          <p className="numberSteps">Steps: { moves/2 }</p>
       <div className="cards">
         {arrayCards.map((item, index) => {
           let isFlipped = false;
