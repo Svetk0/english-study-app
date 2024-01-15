@@ -1,8 +1,9 @@
-//import Header from './components/Header';
+
 import { useEffect }  from 'react';
 import Header from './components/header/Header';
 import Card from './components/card/CardWord';
 import TrainMode from './components/train-mode/TrainMode';
+//import menu from './components/constants';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App-container">
       
       <Header />
+   
       <Card />
       <TrainMode />
     </div>

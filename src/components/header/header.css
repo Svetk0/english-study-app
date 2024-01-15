@@ -1,0 +1,30 @@
+.header-container{
+background-color: rgb(5, 84, 94);
+width: 100vw;
+}
+.header{
+    color: #fff;
+    font-size: 3rem;
+
+   
+}
+.menu-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.button {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    background-color:  rgba(115, 123, 125, 0.498);
+    border: #fff 1px solid;
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+.button:hover {
+    transform: scale(1.05);
+}
