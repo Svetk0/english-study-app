@@ -3,8 +3,9 @@
     flex-direction: column;
     background-color: rgb(231, 204, 165);
    
-    min-width: 80%;
-    max-width: 500px;
+  
+    max-width: 60vw;
+    min-width: 200px;
     
     border-radius: 20px;
     border: 1px solid #fff;
@@ -21,7 +22,7 @@
     color: rgb(51, 36, 5);
 }
 
-.card_translate{
+.card_translation{
     font-size: 1rem;
     color: rgb(21, 20, 19);
     margin: 100px 5px 30px 5px;

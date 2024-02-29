@@ -87,7 +87,7 @@ function TrainMode() {
       <div className="trainMode_container">
           
      
-          <h1 className="tm-header">Train Mode</h1>
+          <h1 className="title">Train Mode</h1>
           <p className="numberSteps">Steps: { moves/2 }</p>
       <div className="cards">
         {arrayCards.map((item, index) => {

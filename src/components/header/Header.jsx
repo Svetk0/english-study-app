@@ -3,7 +3,8 @@ import "./header.css";
 // <h1 className={styles.header}>English study app</h1>
 
 
-function Header({toggleCardVisibility, toggleTrainModeVisibility})  {
+function Header({ toggleCardVisibility, toggleTrainModeVisibility }) {
+  
   return (
     <>
       <div className="header-container">

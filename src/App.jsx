@@ -1,9 +1,12 @@
 
 import { useEffect, useState }  from 'react';
 import Header from './components/header/Header';
-import Card from './components/card/CardWord';
+
+import CardPage from './containers/CardPage/CardPage';
 import TrainMode from './components/train-mode/TrainMode';
 //import menu from './components/constants';
+import { data } from './store/store.js'
+  ;
 import './App.css';
 
 function App() {
@@ -25,8 +28,9 @@ function App() {
   return (
     <div className="App-container">
       <Header toggleCardVisibility={toggleCardVisibility} toggleTrainModeVisibility={toggleTrainModeVisibility}/>
-
-      {isCardVisible && <Card/>}
+      { console.log(data)}
+      {isCardVisible && <CardPage data={ data} />}
+      
       {isTrainModeVisible && <TrainMode/>}
     </div>
   );
