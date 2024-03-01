@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(231, 204, 165);
-   
+   align-items: center;
   
     max-width: 60vw;
     min-width: 200px;
@@ -22,9 +22,13 @@
     color: rgb(51, 36, 5);
 }
 
-.card_translation{
+.card_translation, .card_button{
     font-size: 1rem;
     color: rgb(21, 20, 19);
+    background-color: antiquewhite;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10px;
     margin: 100px 5px 30px 5px;
    
 }

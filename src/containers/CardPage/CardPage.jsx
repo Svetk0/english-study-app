@@ -1,12 +1,11 @@
 //card word
 import Card from "../../components/card/CardWord";
 import styles from "./CardPage.module.css";
-//import { data } from '../../store/store.js';
+
 
 const CardPage = ({ data}) => {
     console.log('data ', data);
-    //const dataArr = Object.keys(data);
-    //console.log('dataArr ', dataArr);
+  
     return (
         <>
           
