@@ -20,15 +20,21 @@ function App() {
   const [isVocabularyVisible, setIsVocabularyVisible] = useState(false);
 
   function toggleCardVisibility() {
-    setIsCardVisible(prevIsVisible => !prevIsVisible)
+    setIsCardVisible(prevIsVisible => !prevIsVisible);
+    setIsTrainModeVisible(false);
+    setIsVocabularyVisible(false);
   }
 
   function toggleTrainModeVisibility() {
-    setIsTrainModeVisible(prevIsVisible => !prevIsVisible)
+    setIsTrainModeVisible(prevIsVisible => !prevIsVisible);
+    setIsCardVisible(false);
+    setIsVocabularyVisible(false);
   }
 
   function toggleVocabularyVisibility() {
-    setIsVocabularyVisible(prevIsVisible => !prevIsVisible)
+    setIsVocabularyVisible(prevIsVisible => !prevIsVisible);
+    setIsTrainModeVisible(false);
+    setIsCardVisible(false);
   }
 
   return (
