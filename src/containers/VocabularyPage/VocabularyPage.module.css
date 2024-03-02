@@ -1,0 +1,18 @@
+table {
+    border: 2px solid forestgreen;
+    width: 100%;
+    background-color: rgb(232, 228, 228);
+    margin-bottom: 3rem;
+    
+}
+ 
+th {
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+ 
+td {
+    text-align: center;
+  
+    
+}

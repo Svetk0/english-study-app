@@ -10,16 +10,19 @@ const CardPage = ({ data}) => {
         <>
           
             <h2 className="title">CardWord</h2>
-            {data.map((item) => (
+            <div className={styles.cardlist_container}>
+            
+                {data.map((item) => (
+         <Card
+             key={ item.word}
+             transcription={item.transcription}
+             translation={item.translation}
+             word={item.word}
+         />
+ 
+     ))}
+            </div>
          
-                <Card
-                   
-                    transcription={item.transcription}
-                    translation={item.translation}
-                    word={item.word}
-                />
-        
-            ))}
         </>
     );
 };

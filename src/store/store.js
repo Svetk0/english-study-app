@@ -12,6 +12,19 @@ const dataJSONinitial = [
         "translation": "фрукт",
         "id": "1",
     },
+
+    {
+        "word": "We",
+        "transcription": "[vi]",
+        "translation": "mi",
+       
+    },
+    {
+        "word": "I",
+       
+        "translation": "ia",
+       
+    },
   
    
 ];
