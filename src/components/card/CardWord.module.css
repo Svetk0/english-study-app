@@ -6,7 +6,7 @@
   
     max-width: 60vw;
     min-width: 200px;
-    height: 300px;
+    min-height: 300px;
     border-radius: 20px;
     border: 1px solid #fff;
     
@@ -16,6 +16,7 @@
     color: rgb(18, 85, 63);
     font-weight: 500;
     margin: 10vw 5px 10px 5px;
+    
 }
 .card_transcription{
     font-size: 1rem;

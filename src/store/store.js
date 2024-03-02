@@ -21,7 +21,7 @@ const dataJSONinitial = [
     },
     {
         "word": "I",
-       
+        "transcription": "[]",
         "translation": "ia",
        
     },
