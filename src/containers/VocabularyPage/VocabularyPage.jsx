@@ -22,10 +22,10 @@ const VocabularyPage = ({ data}) => {
                 {data.map((item) => {
                     return (
                         <Vocabulary
-                        key={ item.word}
-                        transcription={item.transcription}
-                        translation={item.translation}
-                        word={item.word}
+                            
+                            key={item.word}
+                            rowData={ item}
+                        
                     />
                     )
                 })}

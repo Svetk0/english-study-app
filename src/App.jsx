@@ -44,7 +44,7 @@ function App() {
         toggleTrainModeVisibility={toggleTrainModeVisibility}
         toggleVocabularyVisibility={toggleVocabularyVisibility}/>
       
-      { console.log(data)}
+      {/* { console.log(data)} */}
       {isCardVisible && <CardPage data={ data} />}
       {isTrainModeVisible && <TrainMode />}
       {isVocabularyVisible && <VocabularyPage data={ data} />}
