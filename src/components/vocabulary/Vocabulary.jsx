@@ -31,7 +31,11 @@ function Vocabulary({ rowData }) {
   return isSelected ? (
     <tr className={styles.cardContainer}>
       <td>
-        <input type="text" onChange={getValue} value={value.word} name="word" />
+              <input
+                  type="text"
+                  onChange={getValue}
+                  value={value.word}
+                  name="word" />
       </td>
       <td>
         <input
