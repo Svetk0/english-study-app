@@ -9,46 +9,67 @@ const CardPage = ({ data }) => {
     const [btnBackActive, setBackBtnActive] = useState(true);
     const [btnNextActive, setNextBtnActive] = useState(true);
 
-  const moveNext = () => {
-      if (index > data.length-1) {
-        setNextBtnActive(false);
-        setIndex(data.length);
-      }
-      setIndex(index + 1);
-      console.log('BTN index:',index);
-  };
-    
-    const showCurrentCard = (index) => { 
-        
-
+    const checkCardNumbers = () => { 
+        let indexInc = index+1;
+        if (indexInc > data.length-2) {
+            setNextBtnActive(false);
+           
+            //setIndex(data.length-1);
+        }
+        if (indexInc < 1) {
+            setBackBtnActive(false);
+           // setIndex(0);
+        }
+        console.log('currIndex:', indexInc, btnNextActive);
+        //return index;
     }
+
+    const moveNext = () => {
+        setBackBtnActive(true);
+      setIndex(index + 1);
+      checkCardNumbers();
+      console.log('BTN next index:',index);
+  };
+  const moveBack= () => {
+    setNextBtnActive(true);
+    setIndex(index - 1);
+    checkCardNumbers();
+    console.log('BTN back index:',index);
+};
+    
 
   return (
     <>
       <h2 className="title">CardWord</h2>
-      <button    disabled={ !btnBackActive}>Back</button>
+          <button
+              disabled={!btnBackActive}
+              onClick={moveBack}
+          >
+              Back
+          </button>
+
           <button
               disabled={ !btnNextActive}
               onClick={moveNext}
           >
               Next
           </button>
+
       <div className={styles.cardlist_container}>
-        {data.map((item, index) => {
-          return (
-            <div>
+       
+          
+              <div>
+                  {console.log('curr render index:', index)}
+               
               <Card
-                key={item.word}
-                transcription={item.transcription}
-                translation={item.translation}
-                word={item.word}
+                transcription={data[index].transcription}
+                translation={data[index].translation}
+                word={data[index].word}
               />
               <p>
                 {index + 1}/{data.length}
               </p>
             </div>
-          );
-        })}
       </div>
     </>
   );
