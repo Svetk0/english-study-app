@@ -9,6 +9,7 @@
     min-height: 300px;
     border-radius: 20px;
     border: 1px solid #fff;
+    margin: 0 3vw;
     
 }
 .card_word{
@@ -31,5 +32,25 @@
     width: fit-content;
     padding: 10px;
     margin: 100px 5px 30px 5px;
+    border: 1px solid #8a8686;
    
+}
+.card_button {
+transition: 0.3s ease all;
+cursor: pointer;
+}
+
+
+.card_button:hover {
+    transform: scale(1.05);
+    background-color: rgb(5, 84, 94);
+    color: #fff;
+}
+.card_button:active{
+    
+    transform: scale(0.98);
+}
+.card_button:disabled{
+    
+    transform: scale(1);
 }

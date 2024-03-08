@@ -5,7 +5,8 @@ import styles from "./CardWord.module.css";
 function CardWord({ word, transcription, translation }) {
   const [clicked, setCliked] = useState(false);
   const handleCheck = () => {
-    setCliked(!clicked);
+      setCliked(!clicked);
+     
   };
   return (
     <>

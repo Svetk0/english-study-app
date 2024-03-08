@@ -13,7 +13,6 @@ const CardPage = ({ data }) => {
     let indexInc = index + 1;
     if (indexInc > data.length - 2) {
       setNextBtnActive(false);
-
       //setIndex(data.length-1);
     }
     if (indexInc < 1) {
@@ -53,16 +52,18 @@ const CardPage = ({ data }) => {
   return (
     <>
       <h2 className="title">CardWord</h2>
-      <button disabled={!btnBackActive} onClick={moveBack}>
-        Back
-      </button>
+   
 
-      <button disabled={!btnNextActive} onClick={moveNext}>
-        Next
-      </button>
+   
 
       <div className={styles.cardlist_container}>
-        <div>
+              <button
+                  className={ styles.button}
+                  disabled={!btnBackActive}
+                  onClick={moveBack}>
+        Back
+      </button>
+              <div>
           {console.log("curr render index:", index)}
 
           <Card
@@ -73,7 +74,13 @@ const CardPage = ({ data }) => {
           <p>
             {index + 1}/{data.length}
           </p>
-        </div>
+              </div>
+              <button
+                  className={ styles.button}
+                  disabled={!btnNextActive}
+                  onClick={moveNext}>
+        Next
+      </button>
       </div>
     </>
   );

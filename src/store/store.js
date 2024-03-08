@@ -25,6 +25,12 @@ const dataJSONinitial = [
         "translation": "ia",
        
     },
+    {
+        "word": "Congratulations",
+        "transcription": "[kənɡraʧəˈleɪʃnz]",
+        "translation": "Поздравления",
+       
+    },
   
    
 ];
