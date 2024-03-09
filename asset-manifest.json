@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/english-study-app/static/css/main.1e7ebbf9.css",
+    "main.css": "/english-study-app/static/css/main.b22eb3ab.css",
     "main.js": "/english-study-app/static/js/main.a6186767.js",
     "static/js/787.00b96563.chunk.js": "/english-study-app/static/js/787.00b96563.chunk.js",
     "static/media/iconCake.png": "/english-study-app/static/media/iconCake.0184c061b0381471bbb6.png",
@@ -10,12 +10,12 @@
     "static/media/iconShark.png": "/english-study-app/static/media/iconShark.383eff2a6c712f7cb364.png",
     "static/media/iconCar.png": "/english-study-app/static/media/iconCar.adc08fdfcb96cc80ffd9.png",
     "index.html": "/english-study-app/index.html",
-    "main.1e7ebbf9.css.map": "/english-study-app/static/css/main.1e7ebbf9.css.map",
+    "main.b22eb3ab.css.map": "/english-study-app/static/css/main.b22eb3ab.css.map",
     "main.a6186767.js.map": "/english-study-app/static/js/main.a6186767.js.map",
     "787.00b96563.chunk.js.map": "/english-study-app/static/js/787.00b96563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e7ebbf9.css",
+    "static/css/main.b22eb3ab.css",
     "static/js/main.a6186767.js"
   ]
 }
