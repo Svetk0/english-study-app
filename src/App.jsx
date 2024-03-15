@@ -6,8 +6,7 @@ import CardPage from './containers/CardPage/CardPage';
 import VocabularyPage from './containers/VocabularyPage/VocabularyPage';
 import TrainMode from './components/train-mode/TrainMode';
 //import menu from './components/constants';
-import { data } from './store/store.js'
-  ;
+import { data } from './store/store.js';
 import './App.css';
 
 function App() {
