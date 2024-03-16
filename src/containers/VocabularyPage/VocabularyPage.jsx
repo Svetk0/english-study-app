@@ -12,12 +12,12 @@ const VocabularyPage = ({ data}) => {
             <div>
             <h2 className="title">Vocabulary Page</h2>
             <table>
-                <tr>
+                    <tr className={ styles.mainLine}>
                     <th>Word</th>
                     <th>Transcription</th>
                         <th>Translation</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th></th>
+                        <th></th>
                 </tr>
                 {data.map((item) => {
                     return (

@@ -1,18 +1,22 @@
 table {
-    border: 2px solid forestgreen;
-    width: 100%;
-    background-color: rgb(232, 228, 228);
-    margin-bottom: 3rem;
-    
+  border: 2px solid rgb(5, 84, 94);
+  width: 100%;
+  background-color: rgb(232, 228, 228);
+  margin-bottom: 3rem;
 }
- 
+.mainLine {
+  background-color: rgb(5, 84, 94);
+  color: #fff;
+}
+
 th {
-    border-bottom: 1px solid black;
-    padding: 5px;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  margin: 5px;
 }
- 
+
 td {
-    text-align: center;
-  
-    
+  text-align: center;
+  padding: 0 7px;
+  height: 30px;
 }

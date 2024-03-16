@@ -15,30 +15,37 @@ function Vocabulary({ rowData }) {
     });
   }
 
-  const handleCheck = () => {
-    setCliked(!clicked);
-  };
+
 
   const handleEdit = () => {
     setIsSelected(!isSelected);
   };
-    const handleSave = () => { 
-        setValue ({...value});
-        setIsSelected(!isSelected);
-        
-    }
+  const handleSave = () => {
+    setValue({ ...value });
+    setIsSelected(!isSelected);
+  };
+    
+  const handleCancel = (event) => {
+    setValue((prevValue) => {
+        return { ...prevValue, [event.target.name]: [event.target.prevValue]};
+      });
+    setIsSelected(!isSelected);
+  };
 
   return isSelected ? (
     <tr className={styles.cardContainer}>
       <td>
-              <input
-                  type="text"
-                  onChange={getValue}
-                  value={value.word}
-                  name="word" />
+        <input
+          className={styles.tableInput}
+          type="text"
+          onChange={getValue}
+          value={value.word}
+          name="word"
+        />
       </td>
       <td>
         <input
+          className={styles.tableInput}
           type="text"
           onChange={getValue}
           value={value.transcription}
@@ -47,6 +54,7 @@ function Vocabulary({ rowData }) {
       </td>
       <td>
         <input
+          className={styles.tableInput}
           type="text"
           onChange={getValue}
           value={value.translation}
@@ -54,10 +62,14 @@ function Vocabulary({ rowData }) {
         />
       </td>
       <td>
-        <button onClick={handleSave}>Save</button>
+        <button className={styles.btnSave} onClick={handleSave}>
+          Save
+        </button>
       </td>
       <td>
-        <button>Cancel</button>
+              <button
+                  className={styles.btnCancel}
+              onClick={handleCancel}>Cancel</button>
       </td>
     </tr>
   ) : (
@@ -66,10 +78,12 @@ function Vocabulary({ rowData }) {
       <td className={styles.card_transcription}>{value.transcription}</td>
       <td className={styles.translation}>{value.translation}</td>
       <td>
-        <button onClick={handleEdit}>e</button>
+        <button className={styles.btnEdit} onClick={handleEdit}>
+          Edit
+        </button>
       </td>
       <td>
-        <button>x</button>
+        <button className={styles.btnDelete}>Delete</button>
       </td>
     </tr>
   );
