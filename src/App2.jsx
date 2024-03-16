@@ -22,9 +22,9 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/cards" element={<CardPage data={data} />} />
-          <Route path="/" element={<VocabularyPage data={data} />} />
-          <Route path="/train" element={<TrainMode />} />
+          <Route path="/english-study-app/cards" element={<CardPage data={data} />} />
+          <Route path="/english-study-app/" element={<VocabularyPage data={data} />} />
+          <Route path="/english-study-app/train" element={<TrainMode />} />
         </Routes>
       </div>
     </Router>

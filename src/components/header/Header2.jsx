@@ -23,13 +23,13 @@ function Header() {
         <nav className="menu-header">
         <ul className='menu-list__container'>
               <li className="menu-link">
-                <Link to="/">Vocabulary</Link>
+                <Link to="/english-study-app/">Vocabulary</Link>
               </li>
               <li className="menu-link">
-                <Link to="/cards">Cards</Link>
+                <Link to="/english-study-app/cards">Cards</Link>
               </li>
               <li className="menu-link">
-                <Link to="/train">Train mode</Link>
+                <Link to="/english-study-app/train">Train mode</Link>
               </li>
             </ul>
         </nav>
