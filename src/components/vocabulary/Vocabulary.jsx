@@ -7,9 +7,11 @@ function Vocabulary({ rowData }) {
 
   const [clicked, setCliked] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
-  const [value, setValue] = useState({ ...rowData });
+    const [value, setValue] = useState({ ...rowData });
+    const [inputValue, setInputValue] = useState({ ...value });
 
-  function getValue(event) {
+    function getValue(event) {
+       // setInputValue({ ...value });
     setValue((prevValue) => {
       return { ...prevValue, [event.target.name]: [event.target.value] };
     });
@@ -22,13 +24,12 @@ function Vocabulary({ rowData }) {
   };
   const handleSave = () => {
     setValue({ ...value });
-    setIsSelected(!isSelected);
+      setIsSelected(!isSelected);
+      setInputValue({ ...value });
   };
     
-  const handleCancel = (event) => {
-    setValue((prevValue) => {
-        return { ...prevValue, [event.target.name]: [event.target.prevValue]};
-      });
+  const handleCancel = () => {
+    setValue({ ...inputValue });
     setIsSelected(!isSelected);
   };
 
