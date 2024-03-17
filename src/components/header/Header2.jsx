@@ -10,11 +10,11 @@ import "./header.css";
 function Header() {
   return (
     <div className="header-container">
-      <h1 className="header">English study app</h1>
+      <h1 className="header"><Link to="/english-study-app">English study app</Link></h1>
       <nav className="menu-header">
         <ul className="menu-list__container">
           <li className="menu-link">
-            <Link to="/english-study-app/">Vocabulary</Link>
+            <Link to="/english-study-app/vocabulary">Vocabulary</Link>
           </li>
           <li className="menu-link">
             <Link to="/english-study-app/cards">Cards</Link>

@@ -2,10 +2,20 @@
 background-color: rgb(5, 84, 94);
 width: 100vw;
 }
-.header{
+
+
+.header a{
+    cursor: pointer;
     color: #fff;
     font-size: 2rem;
-
+    text-decoration: none;
+    transition: 0.4s ease all;
+ 
+}
+.header a:hover {
+ 
+   transform: scale(1.2);
+    color: rgb(255, 187, 0);
    
 }
 .menu-header {
@@ -14,6 +24,7 @@ width: 100vw;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+
    
 }
 
@@ -44,8 +55,8 @@ width: 100vw;
        transform: scale(1.08);
         text-shadow: none;
         border-radius: 3px;
-    
     }
+
     .lmenu-list__container :global(a.active){
         border: 2px solid var(--color-violet);
         color: var(--color-violet);
