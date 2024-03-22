@@ -9,16 +9,6 @@ const CardPage = ({ data }) => {
   const [btnBackActive, setBackBtnActive] = useState(true);
   const [btnNextActive, setNextBtnActive] = useState(true);
 
-  const checkCardNumbers = () => {
-    let indexInc = index + 1;
-    if (indexInc > data.length - 2) {
-      setNextBtnActive(false);
-    }
-    if (indexInc < 1) {
-      setBackBtnActive(false);
-    }
-    console.log("currIndex:", indexInc, btnNextActive);
-  };
 
   //Button NEXT
   const moveNext = () => {
@@ -51,7 +41,7 @@ const CardPage = ({ data }) => {
     setCliked(!clicked);
   };
 
-  
+
   return (
     <>
       <h2 className="title">CardWord</h2>
