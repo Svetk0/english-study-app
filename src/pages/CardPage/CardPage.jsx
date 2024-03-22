@@ -25,6 +25,7 @@ const CardPage = ({ data }) => {
 
   const moveNext = () => {
     setBackBtnActive(true);
+   setCliked(false);
       setIndex(index + 1);
       if (index > data.length - 3) {
         console.log("BTN next If index:", index);
@@ -37,6 +38,7 @@ const CardPage = ({ data }) => {
   };
   const moveBack = () => {
     console.log("BTN back INPUT index:", index);
+    setCliked(false);
     setNextBtnActive(true);
     setIndex(index - 1);
     //checkCardNumbers();
@@ -48,7 +50,10 @@ const CardPage = ({ data }) => {
 
     //console.log('BTN back OUTPUT index:',index);
   };
-
+  const [clicked, setCliked] = useState(false);
+  const handleCheck = () => {
+    setCliked(!clicked);
+  };
   return (
     <>
       <h2 className="title">CardWord</h2>
@@ -66,6 +71,8 @@ const CardPage = ({ data }) => {
             transcription={data[index].transcription}
             translation={data[index].translation}
             word={data[index].word}
+            clicked={clicked}
+            btnFunction={handleCheck}
           
           />
           <p>
