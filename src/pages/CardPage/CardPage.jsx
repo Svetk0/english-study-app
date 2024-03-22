@@ -1,6 +1,6 @@
 //card word
 import { useState } from "react";
-import Card from "../../components/card/CardWord";
+import Card from "../../components/Card/CardWord";
 import styles from "./CardPage.module.css";
 
 const CardPage = ({ data }) => {
@@ -52,10 +52,6 @@ const CardPage = ({ data }) => {
   return (
     <>
       <h2 className="title">CardWord</h2>
-   
-
-   
-
       <div className={styles.cardlist_container}>
               <button
                   className={ styles.button}
@@ -70,6 +66,7 @@ const CardPage = ({ data }) => {
             transcription={data[index].transcription}
             translation={data[index].translation}
             word={data[index].word}
+          
           />
           <p>
             {index + 1}/{data.length}

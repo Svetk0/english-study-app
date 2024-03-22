@@ -12,7 +12,7 @@ const HomePage = () => {
            <div className="title">Welcome my friend! </div>
           <img className={styles.img} src={img} alt="welcome" />
           <div className={styles.container}>
-              <div className="title">let's upskalling your English together</div>
+              <div className="title">let's upskilling your English together</div>
               <div  className={styles.text__tip}> <i> choose any play mode above</i></div>
     
           </div>

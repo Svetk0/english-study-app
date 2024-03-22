@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import "./trainMode.css";
+import "./TrainMode.css";
 import pathIconApple from "./img/iconApple.png";
 import pathIconCar from "./img/iconCar.png";
 import pathIconCake from "./img/iconCake.png";

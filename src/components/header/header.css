@@ -5,6 +5,7 @@ width: 100vw;
 
 
 .header a{
+    display: inline-block;
     cursor: pointer;
     color: #fff;
     font-size: 2rem;
@@ -13,7 +14,7 @@ width: 100vw;
  
 }
 .header a:hover {
- 
+    
    transform: scale(1.2);
     color: rgb(255, 187, 0);
    
