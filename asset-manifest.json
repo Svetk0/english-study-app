@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/english-study-app/static/css/main.31e7d536.css",
-    "main.js": "/english-study-app/static/js/main.e1442439.js",
+    "main.css": "/english-study-app/static/css/main.cebee983.css",
+    "main.js": "/english-study-app/static/js/main.999109a8.js",
     "static/js/787.00b96563.chunk.js": "/english-study-app/static/js/787.00b96563.chunk.js",
     "static/media/iconCake.png": "/english-study-app/static/media/iconCake.0184c061b0381471bbb6.png",
     "static/media/iconDog.png": "/english-study-app/static/media/iconDog.fe3cb1848f8fb802fe98.png",
@@ -13,12 +13,12 @@
     "static/media/iconCar.png": "/english-study-app/static/media/iconCar.adc08fdfcb96cc80ffd9.png",
     "static/media/notfound.png": "/english-study-app/static/media/notfound.1062f5e41ef989b5973a.png",
     "index.html": "/english-study-app/index.html",
-    "main.31e7d536.css.map": "/english-study-app/static/css/main.31e7d536.css.map",
-    "main.e1442439.js.map": "/english-study-app/static/js/main.e1442439.js.map",
+    "main.cebee983.css.map": "/english-study-app/static/css/main.cebee983.css.map",
+    "main.999109a8.js.map": "/english-study-app/static/js/main.999109a8.js.map",
     "787.00b96563.chunk.js.map": "/english-study-app/static/js/787.00b96563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31e7d536.css",
-    "static/js/main.e1442439.js"
+    "static/css/main.cebee983.css",
+    "static/js/main.999109a8.js"
   ]
 }
