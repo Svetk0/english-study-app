@@ -12,6 +12,7 @@ import TrainMode from "./components/TrainMode/TrainMode";
 import { data } from "./store/store.js";
 import "./App.css";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/english-study-app/train" element={<TrainMode />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
