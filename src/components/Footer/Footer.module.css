@@ -19,4 +19,8 @@
 }
 .text {
     color: #fff;
+    text-decoration: none;
+}
+.a_container{
+    text-decoration: none; 
 }
