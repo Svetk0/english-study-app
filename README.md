@@ -1,15 +1,75 @@
+<div align="center"> 
+
 # learning language with <br/> English Study App
 
-<div>try it here </div> 
+<div  >try it here </div> 
 <a href="https://svetk0.github.io/english-study-app/">https://svetk0.github.io/english-study-app/ </a>
 
 ---
 <br/> 
-<br/> 
+
+
+
+
+## How it works
+
+## Step 1. Look at the Welcome page
+
+<img src="./src/readme/img/homepage.png" width="300px"> 
+<br />
+<br />
+<div align="left">
+<h4>Choose an option: </h4> 
+-->  Vocabulary <br />
+-->  Cards <br />
+-->  Train mode <br />
+ </div>
+<br />
+
+## Step 2. Explore all features
+
+<table align="center">
+  <tr>
+    <td>
+   <p align="center">Vocabulary</p>
+    </td>
+    <td>
+   <p align="center">Cards</p>
+    </td>
+      <td>
+  <p align="center">Train mode </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+   <img src="./src/readme/img/vocabulary.png" width="300px"> 
+    </td>
+    <td>
+   <img src="./src/readme/img/cards.png" width="300px"> 
+    </td>
+      <td>
+   <img src="./src/readme/img/trainmode.png" width="300px"> 
+    </td>
+  </tr>
+    <tr>
+    <td>
+   <p align="center">Manage own vocabulary list: Add, Edit, Delete</p>
+    </td>
+    <td>
+   <p align="center">Learn new words and check yourself</p>
+    </td>
+      <td>
+  <p align="center">Make challenge to your memory</p>
+    </td>
+  </tr>
+</table>
+
+<br />
+<br />
 
 ## Available Scripts
-
 In the project directory, you can run:
-
 ### `npm start`
-
+<br/> 
+<br/> 
+</div>
