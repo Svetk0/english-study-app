@@ -11,10 +11,8 @@ function Footer() {
       
         <div className={styles.footer_wrapper}> 
             <a className={styles.a_container} href="https://github.com/Svetk0/english-study-app" target="_blank"> 
-        <div className={ styles.text }>developed by </div> 
-            
-            
                 <img className={styles.img} src={img} alt="github" />
+                <div className={ styles.text }>developed by </div> 
             </a>
         </div>
 
