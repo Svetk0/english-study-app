@@ -1,7 +1,7 @@
 # learning language with <br/> English Study App
 
 <div>try it here </div> 
-<a>https://svetk0.github.io/english-study-app/ </a>
+<a href="https://svetk0.github.io/english-study-app/">https://svetk0.github.io/english-study-app/ </a>
 
 ---
 <br/> 
