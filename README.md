@@ -1,6 +1,7 @@
 <div align="center"> 
 
-# learning language with <br/> English Study App
+## learning language with 
+# English Study App
 
 <div  >try it here </div> 
 <a href="https://svetk0.github.io/english-study-app/">https://svetk0.github.io/english-study-app/ </a>
@@ -11,18 +12,19 @@
 
 
 
-## How it works
+<h2> <b> How it works </b> </h2>
 
 ## Step 1. Look at the Welcome page
 
 <img src="./src/readme/img/homepage.png" width="300px"> 
 <br />
 <br />
-<div align="left">
+<div >
 <h4>Choose an option: </h4> 
--->  Vocabulary <br />
--->  Cards <br />
--->  Train mode <br />
+<div> -->  Vocabulary </div>
+<div> -->  Cards </div>
+<div> -->  Train mode  </div>
+
  </div>
 <br />
 
@@ -42,13 +44,13 @@
   </tr>
   <tr>
     <td>
-   <img src="./src/readme/img/vocabulary.png" width="300px"> 
+   <img src="./src/readme/img/vocabulary.png" width="500px"> 
     </td>
     <td>
-   <img src="./src/readme/img/cards.png" width="300px"> 
+   <img src="./src/readme/img/cards.png" width="400px"> 
     </td>
       <td>
-   <img src="./src/readme/img/trainmode.png" width="300px"> 
+   <img src="./src/readme/img/trainmode.png" width="400px"> 
     </td>
   </tr>
     <tr>
