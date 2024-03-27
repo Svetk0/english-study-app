@@ -8,6 +8,7 @@ const CardPage = ({ data }) => {
   const [index, setIndex] = useState(0);
   const [btnBackActive, setBackBtnActive] = useState(true);
   const [btnNextActive, setNextBtnActive] = useState(true);
+  
 
 
   //Button NEXT
@@ -15,11 +16,13 @@ const CardPage = ({ data }) => {
     setBackBtnActive(true);
     setCliked(false);
     setIndex(index + 1);
+  
     if (index > data.length - 3) {
       console.log("BTN next If index:", index);
       setNextBtnActive(false);
+      
     }
-
+    setIndexInner(index+1);
     console.log("BTN next index:", index);
   };
 
@@ -29,15 +32,25 @@ const CardPage = ({ data }) => {
     setCliked(false);
     setNextBtnActive(true);
     setIndex(index - 1);
+   
     if (index < 2) {
       setBackBtnActive(false);
       setIndex(0);
     }
+    setIndexInner(index-1);
   };
 
   //Button CHECK
+  const [indexInner, setIndexInner] = useState(index);
+  const [learnedWords, setLearnedWords] = useState(0);
   const [clicked, setCliked] = useState(false);
   const handleCheck = () => {
+    
+    if ((clicked === false) && (indexInner===index)) {
+      setLearnedWords(learnedWords + 1);
+      setIndexInner(indexInner*0.1);
+      //по идее здесь нужно добавить удаление данной карточки из этого списка, т.е создание нового массива через метод filter()
+    };
     setCliked(!clicked);
   };
 
@@ -54,8 +67,11 @@ const CardPage = ({ data }) => {
           Back
         </button>
         <div>
-          {console.log("curr render index:", index)}
-
+        
+          {console.log("curr render index:", index, indexInner)}
+          <p>
+           You have learned: {learnedWords}/{data.length}
+          </p>
           <Card
             transcription={data[index].transcription}
             translation={data[index].translation}
