@@ -17,6 +17,7 @@ const CardPage = ({ dataList }) => {
         //setCurrentIndex(currentIndex);
         console.log('useEffect!-----', currentIndex);
         checkCurrentIndex(currentIndex);
+        setCliked(false);
     }, [currentIndex]);
 
     const checkCurrentIndex = (index) => { 
@@ -34,6 +35,7 @@ const CardPage = ({ dataList }) => {
     const handleCheck = (id) => { 
         console.log('id', id);
         setCliked(!clicked); 
+        setLearnedWords(learnedWords+1);
     }
     const moveBack = () => {
        // console.log("moveBack", currentIndex);
