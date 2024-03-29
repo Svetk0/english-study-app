@@ -2,9 +2,9 @@
 import { useState } from "react";
 import styles from "./CardWord.module.css";
 
-function CardWord({ word, transcription, translation, clicked, btnFunction }) {
-  //const [clicked, setCliked] = useState();
-  
+function CardWord({ word, transcription, translation,clicked, btnFunction }) {
+  //const [clicked, setCliked] = useState(false);
+
   return (
     <>
       <div className={styles.cardContainer}>
@@ -18,7 +18,7 @@ function CardWord({ word, transcription, translation, clicked, btnFunction }) {
                       > check </button>
           ) : (
               <div
-                onClick={btnFunction}
+                
                               className={styles.card_translation}>{translation}
             </div>
           )}

@@ -32,7 +32,7 @@ function App() {
           />
           <Route
             path="/english-study-app/cards"
-            element={<CardPage data={data} />}
+            element={<CardPage dataList={data} />}
           />
           <Route
             path="/english-study-app/vocabulary"
