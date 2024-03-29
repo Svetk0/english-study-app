@@ -4,8 +4,8 @@
     background-color: rgb(231, 204, 165);
    align-items: center;
   
-    max-width: 60vw;
-    min-width: 200px;
+    width: 60vw;
+    /* min-width: 200px; */
     min-height: 300px;
     border-radius: 20px;
     border: 1px solid #fff;
@@ -18,10 +18,12 @@
   
 }
 .card_word{
-    font-size: 3rem;
+    font-size: 2.2rem;
+    
     color: rgb(18, 85, 63);
     font-weight: 500;
     margin: 10vw 5px 10px 5px;
+    width: 90%;
     
 }
 .card_transcription{
