@@ -4,6 +4,9 @@ import Card from "../../components/Card/CardWord";
 import styles from "./CardPage.module.css";
 
 const CardPage = ({ dataList }) => { 
+    //const initialData = [...dataList];
+    const initialData = dataList.slice();
+    console.log('compare: ', dataList === initialData);
     const [btnBackActive, setBackBtnActive] = useState(true);
   const [btnNextActive, setNextBtnActive] = useState(true);
     const [data, setData] = useState(dataList); //for filter
@@ -32,10 +35,19 @@ const CardPage = ({ dataList }) => {
 
     }
 
+    const deleteItem = (id) => { 
+
+        console.log('data.id :', data[id]);
+        const updatedDataList = data.splice(id, 1);
+        //setData(updatedDataList);
+        console.log('updatedDataList:', updatedDataList);
+      }
+
     const handleCheck = (id) => { 
         console.log('id', id);
         setCliked(!clicked); 
-        setLearnedWords(learnedWords+1);
+        setLearnedWords(learnedWords + 1);
+        deleteItem(id);
     }
     const moveBack = () => {
        // console.log("moveBack", currentIndex);
@@ -61,7 +73,7 @@ const CardPage = ({ dataList }) => {
                 
         <div>
           <p>
-           You have learned: {learnedWords}/{data.length}
+           You have learned: {learnedWords}/{initialData.length}
                     </p>
                   
                 {data.map((card, index) => (
