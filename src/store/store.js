@@ -16,13 +16,13 @@ const dataJSONinitial = [
     {
         "word": "We",
         "transcription": "[vi]",
-        "translation": "mi",
+        "translation": "Мы",
        
     },
     {
         "word": "I",
         "transcription": "[]",
-        "translation": "ia",
+        "translation": "Я",
        
     },
     {
