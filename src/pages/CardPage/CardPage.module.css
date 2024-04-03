@@ -1,29 +1,62 @@
-.cardlist_container{
+.cardItems_wrapper, .cardlist_main{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 3vw;
+  flex-direction: column;
+ gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.cardlist_container {
     height: 70vh;
+    flex-wrap: nowrap;
+}
+.cardlist_container, .cardItems_learnedRestart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cardItems_learnedRestart {
+    gap: 10vw;
+    justify-content:space-between;
+    flex-wrap: wrap;
+
 }
 
 .button {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    transition: 0.3s ease all;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  transition: 0.3s ease all;
 }
 
+.button_restart {
 
+  font-size: 0.9rem;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 7px 15px;
+  border: 1px solid rgb(5, 84, 94);
+  transition: 0.3s ease all;
+  cursor: pointer;
+  background-color: rgb(239, 239, 239);
+  color: rgb(5, 84, 94)
+}
+
+.button_restart:hover {
+  transform: scale(1.05);
+
+  background-color: rgb(5, 84, 94);
+  color: #fff;
+}
+.button_restart:active {
+  transform: scale(0.98);
+}
 .button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-.button:active{
-    
-    transform: scale(0.98);
+.button:active {
+  transform: scale(0.98);
 }
-.button:disabled{
-    
-    transform: scale(1);
+.button:disabled {
+  transform: scale(1);
 }

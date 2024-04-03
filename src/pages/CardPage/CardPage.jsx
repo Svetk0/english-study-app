@@ -60,16 +60,40 @@ const CardPage = ({ dataList }) => {
     const [btnBackActive, setBackBtnActive] = useState(true);
     const [btnNextActive, setNextBtnActive] = useState(true);
 
+    const restartGame = () => { 
+        dataList.forEach(object => {
+            object.learned = false;
+          })
+        setData(dataList);
+        setCurrentIndex(0);
+        setLearnedWords([])
+        setShowTranslation(false);
+        console.log('restart', data);
+    }
+    useEffect(() => {
+        restartGame();
+    }, [dataList]);
     return (
         <>
+            <div className={styles.cardlist_main}>
+        
             <h2 className="title">CardWord</h2>
+           
+
             <div className={styles.cardlist_container}>
                 <button className={styles.button} disabled={!btnBackActive} onClick={moveBack}>
                     Back
                 </button>
 
-                <div>
-                    <p>You have learned: {learnedWords.length}/{data.length}</p>
+                <div className={styles.cardItems_wrapper}>
+               
+                        <div className={styles.cardItems_learnedRestart}>
+                            <p>You have learned: {learnedWords.length}/{data.length}</p>
+                            <button className={styles.button_restart}  onClick={restartGame}>
+                    restart Game
+                </button>
+                        </div>
+                   
 
                     {data.map((card, index) => (
                         <div key={card.word} style={{ display: index === currentIndex ? "block" : "none" }}>
@@ -92,7 +116,8 @@ const CardPage = ({ dataList }) => {
                 <button className={styles.button} disabled={!btnNextActive} onClick={moveNext}>
                     Next
                 </button>
-            </div>
+                </div>
+                </div>
         </>
     );
 };
