@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .cardlist_container {
-    height: 70vh;
+    /* height: 70vh; */
     flex-wrap: nowrap;
 }
 .cardlist_container, .cardItems_learnedRestart {

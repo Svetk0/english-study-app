@@ -6,7 +6,7 @@
   
     width: 60vw;
     /* min-width: 200px; */
-    min-height: 300px;
+    min-height: 250px;
     border-radius: 20px;
     border: 1px solid #fff;
     margin: 0 3vw;
@@ -25,7 +25,7 @@
     
     color: rgb(18, 85, 63);
     font-weight: 500;
-    margin: 10vw 5px 10px 5px;
+    margin: 5vw 5px 10px 5px;
     width: 90%;
     
 }
@@ -41,7 +41,7 @@
     border-radius: 5px;
     width: fit-content;
     padding: 10px;
-    margin: 100px 5px 30px 5px;
+    margin: 7vw 5px 30px 5px;
     border: 1px solid #8a8686;
    
 }
