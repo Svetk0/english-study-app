@@ -4,11 +4,9 @@ import Card from "../../components/Card/CardWord";
 import styles from "./CardPage.module.css";
 
 const CardPage = ({ dataList }) => {
-    //const [initialData] = useState(dataList);
     const [data, setData] = useState(dataList);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [learnedWords, setLearnedWords] = useState([]);
-    const [isLearned, setIsLearned] = useState(false);
     const [showTranslation, setShowTranslation] = useState(false);
 
     useEffect(() => {
@@ -45,7 +43,7 @@ const CardPage = ({ dataList }) => {
         setShowTranslation(true);
         learnedWords.push(data[id]);
         setLearnedWords(checkUniqueLearnedWord(learnedWords));
-        setIsLearned(true);
+       
        
     };
 
