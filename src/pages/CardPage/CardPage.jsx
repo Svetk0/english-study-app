@@ -8,6 +8,7 @@ const CardPage = ({ dataList }) => {
     const [data, setData] = useState(dataList);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [learnedWords, setLearnedWords] = useState([]);
+    const [isLearned, setIsLearned] = useState(false);
     const [showTranslation, setShowTranslation] = useState(false);
 
     useEffect(() => {
@@ -28,7 +29,11 @@ const CardPage = ({ dataList }) => {
                     ? res
                     : [...res, cur],
             []
-        ).sort((a, b) => a - b); 
+        );
+        uniqueArray.sort((a, b) => a - b); 
+        uniqueArray.forEach(object => {
+            object.learned = true;
+          });
         console.log('unique:', uniqueArray);
         return uniqueArray; 
     };
@@ -39,7 +44,8 @@ const CardPage = ({ dataList }) => {
         console.log('id', id);
         setShowTranslation(true);
         learnedWords.push(data[id]);
-        setLearnedWords( checkUniqueLearnedWord(learnedWords));
+        setLearnedWords(checkUniqueLearnedWord(learnedWords));
+        setIsLearned(true);
        
     };
 
@@ -73,6 +79,7 @@ const CardPage = ({ dataList }) => {
                                 transcription={card.transcription}
                                 translation={card.translation}
                                 word={card.word}
+                                isLearned={card.learned }
                                 clicked={showTranslation} // Передаем состояние showTranslation
                                 btnFunction={() => handleCheck(index)}
                             />
