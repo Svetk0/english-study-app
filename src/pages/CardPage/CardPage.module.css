@@ -43,7 +43,7 @@
 }
 
 .button_restart:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 
   background-color: rgb(5, 84, 94);
   color: #fff;
