@@ -7,7 +7,7 @@ function CardWord({ word, transcription, translation,clicked, btnFunction }) {
 
   return (
     <>
-      <div className={styles.cardContainer}>
+      <div className={!clicked ? (styles.cardContainer ):( styles.cardContainer__learned )}>
         <div className={styles.card_word}>{word}</div>
         <div className={styles.card_transcription}>{transcription}</div>
         <div>
