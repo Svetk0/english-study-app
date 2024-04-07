@@ -23,9 +23,9 @@ const Form = () => {
     <div className={styles.form__wrapper}>
       <form onSubmit={handleSubmit}  className={styles.form}>
         <input className={styles.form__input} onChange={handleChange} value={text} />
-        <input className={styles.form__button} type="submit" value="Submit" />
+        <input className={styles.form__button} type="submit" value="Search" />
       </form>
-      <p>Your text: {editedText}</p>
+      <p>Your request: {editedText}</p>
     </div>
   );
 };

@@ -23,7 +23,7 @@ function Header() {
             <Link to="/english-study-app/train">Train mode</Link>
           </li>
           <li className="menu-link">
-            <Link to="/english-study-app/form">Form</Link>
+            <Link to="/english-study-app/form">Search</Link>
           </li>
         </ul>
       </nav>
