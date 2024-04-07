@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 
@@ -13,6 +13,7 @@ import { data } from "./store/store.js";
 import "./App.css";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Footer from "./components/Footer/Footer";
+import Form2 from "./components/Form/Form";
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
           <Route
             path="/english-study-app/vocabulary"
             element={<VocabularyPage data={data} />}
+          />
+            <Route
+            path="/english-study-app/form"
+            element={<Form2/>}
           />
           <Route path="/english-study-app/train" element={<TrainMode />} />
           <Route path="*" element={<NotFoundPage />} />
