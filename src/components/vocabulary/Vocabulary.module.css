@@ -36,6 +36,13 @@ border: 1px solid rgb(128, 7, 7);
     border: 1px solid rgb(255, 255, 255);
     }
 
+
+.btnSave:disabled {
+    color: rgb(255, 255, 255);
+    background-color:rgb(87, 98, 100);
+    border: 1px solid rgb(255, 255, 255);
+    }
+
     .btnCancel {
         color: rgb(5, 84, 94);
         background-color:rgb(239, 239, 239);
