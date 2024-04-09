@@ -3,32 +3,35 @@ const dataJSONinitial = [
         "word": "Apple",
         "transcription": "[æpl]",
         "translation": "яблоко",
-        "id": "0",
+        "id": "1",
     },
 
     {
         "word": "fruit",
         "transcription": "[fru:t]",
         "translation": "фрукт",
-        "id": "1",
+        "id": "2",
     },
 
     {
         "word": "We",
         "transcription": "[vi]",
         "translation": "Мы",
+        "id": "3",
        
     },
     {
         "word": "I",
         "transcription": "[]",
         "translation": "Я",
+        "id": "4",
        
     },
     {
         "word": "Congratulations",
         "transcription": "[kənɡraʧəˈleɪʃnz]",
         "translation": "Поздравления",
+        "id": "5",
        
     },
   

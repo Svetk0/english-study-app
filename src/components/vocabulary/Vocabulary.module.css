@@ -1,6 +1,10 @@
 .tableInput {
     width:80%;
 }
+.errorInput {
+    border: 2px solid red;
+}
+
 
 .btnEdit,  .btnCancel, .btnSave, .btnDelete {
     width: 60px;
