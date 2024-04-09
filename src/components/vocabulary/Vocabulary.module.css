@@ -1,8 +1,18 @@
-.tableInput {
+td {
+    width: 130px;
+}
+.tdButtons {
+    width:70px;
+}
+.tableInput, .errorInput {
     width:80%;
+    border: 1px solid rgb(87, 98, 100);
+    border-radius: 5px;
+    padding-left: 10px ;
 }
 .errorInput {
     border: 2px solid red;
+ 
 }
 
 

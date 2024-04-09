@@ -97,7 +97,7 @@ function Vocabulary({ rowData }) {
           name="translation"
         />
       </td>
-      <td>
+      <td className={styles.tdButtons}>
         <button
           className={styles.btnSave}
           onClick={handleSave}
@@ -107,7 +107,7 @@ function Vocabulary({ rowData }) {
           Save
         </button>
       </td>
-      <td>
+      <td className={styles.tdButtons}>
         <button className={styles.btnCancel} onClick={handleCancel}>
           Cancel
         </button>
@@ -118,12 +118,12 @@ function Vocabulary({ rowData }) {
       <td className={styles.card_word}>{value.word}</td>
       <td className={styles.card_transcription}>{value.transcription}</td>
       <td className={styles.translation}>{value.translation}</td>
-      <td>
+      <td className={styles.tdButtons}>
         <button className={styles.btnEdit} onClick={handleEdit}>
           Edit
         </button>
       </td>
-      <td>
+      <td className={styles.tdButtons}>
         <button className={styles.btnDelete}>Delete</button>
       </td>
     </tr>
