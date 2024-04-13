@@ -14,14 +14,18 @@ import "./App.css";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Footer from "./components/Footer/Footer";
 import Form2 from "./components/Form/Form";
+import VocabularyList from "./components/Vocabulary/VocabularyList";
 
 
+import { WordProvider } from "./context/WordContext/WordContext";
 function App() {
   useEffect(() => {
     document.title = "English study";
   }, []);
 
   return (
+  
+    <WordProvider>
     <Router>
       <div className="App-container">
         <Header />
@@ -43,12 +47,22 @@ function App() {
             path="/english-study-app/form"
             element={<Form2/>}
           />
-          <Route path="/english-study-app/train" element={<TrainMode />} />
+          <Route path="/english-study-app/train"
+            element={<TrainMode />} />
+          
+   
+    
+      <Route path="/english-study-app/vocabulary-list"
+        element={<VocabularyList />} />
+    
+         
+          
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer/>
       </div>
-    </Router>
+      </Router>
+      </WordProvider>
   );
 }
 

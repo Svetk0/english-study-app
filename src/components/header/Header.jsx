@@ -17,6 +17,9 @@ function Header() {
             <Link to="/english-study-app/vocabulary">Vocabulary</Link>
           </li>
           <li className="menu-link">
+            <Link to="/english-study-app/vocabulary-list">V List</Link>
+          </li>
+          <li className="menu-link">
             <Link to="/english-study-app/cards">Cards</Link>
           </li>
           <li className="menu-link">
