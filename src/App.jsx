@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import { WordContext } from "./context/WordContext/WordContext";
 import Header from "./components/Header/Header";
 
 import HomePage from "./pages/HomePage/HomePage";
@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     document.title = "English study";
   }, []);
+  //const { words, setWords } = useContext(WordContext);
 
   return (
   

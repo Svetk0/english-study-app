@@ -27,7 +27,7 @@ const VocabularyList = () => {
       {words.map((task) => (
         <div key={task.id} className='todo-item'>
           <input type='checkbox' checked={task.completed} readOnly />
-          <span>{task.title}</span>
+          <span>{task.english}</span>
           <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
         </div>
       ))}

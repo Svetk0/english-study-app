@@ -4,18 +4,18 @@ import styles from "./Vocabulary.module.css";
 import { useEffect } from "react";
 
 function Vocabulary({ rowData }) {
-  const {id, word, transcription, translation } = rowData;
+  const {id, english, transcription, russian } = rowData;
   const [errors, setErrors] = useState({
-    word: false,
+    english: false,
     transcription: false,
-    translation: false,
+    russian: false,
   });
   const [errorDescription, setErrorDescription] = useState('');
   const [value, setValue] = useState({
     id:id,
-    word: word,
+    english: english,
     transcription: transcription,
-    translation: translation,
+    russian: russian,
   });
  
   const [isSelected, setIsSelected] = useState(false);
@@ -72,11 +72,11 @@ function Vocabulary({ rowData }) {
     <tr className={styles.cardContainer}>
       <td>
         <input
-          className = { errors.word  ? styles.errorInput : styles.tableInput}
+          className = { errors.english  ? styles.errorInput : styles.tableInput}
           type="text"
           onChange={getValue}
-          value={value.word}
-          name="word"
+          value={value.english}
+          name="english"
         />
       </td>
       <td>
@@ -90,11 +90,11 @@ function Vocabulary({ rowData }) {
       </td>
       <td>
         <input
-        className = { errors.translation  ? styles.errorInput : styles.tableInput}
+        className = { errors.russian  ? styles.errorInput : styles.tableInput}
           type="text"
           onChange={getValue}
-          value={value.translation}
-          name="translation"
+          value={value.russian}
+          name="russian"
         />
       </td>
       <td className={styles.tdButtons}>
@@ -115,9 +115,9 @@ function Vocabulary({ rowData }) {
     </tr>
   ) : (
     <tr className={styles.cardContainer}>
-      <td className={styles.card_word}>{value.word}</td>
+      <td className={styles.card_word}>{value.english}</td>
       <td className={styles.card_transcription}>{value.transcription}</td>
-      <td className={styles.translation}>{value.translation}</td>
+      <td className={styles.translation}>{value.russian}</td>
       <td className={styles.tdButtons}>
         <button className={styles.btnEdit} onClick={handleEdit}>
           Edit

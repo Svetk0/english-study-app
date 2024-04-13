@@ -1,12 +1,14 @@
 
 //table of words
+import React, { useContext } from "react";
 import Vocabulary from '../../components/Vocabulary/Vocabulary';
 import styles from "./VocabularyPage.module.css";
+import { WordContext } from "../../context/WordContext/WordContext";
 
-
-const VocabularyPage = ({ data}) => {
-
-  
+const VocabularyPage = () => {
+    const { words, setWords } = useContext(WordContext);
+    //setWords(data);
+    console.log('vocab',words);
     return (
         <>
             <div>
@@ -19,11 +21,11 @@ const VocabularyPage = ({ data}) => {
                         <th></th>
                         <th></th>
                 </tr>
-                {data.map((item) => {
+                {words.map((item) => {
                     return (
                         <Vocabulary
                             
-                            key={item.word}
+                            key={item.english}
                             rowData={ item}
                         
                     />

@@ -17,12 +17,13 @@ const WordProvider = ({ children }) => {
   const loadData = async () => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos"
+        "http://itgirlschool.justmakeit.ru/api/words"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch tasks");
       }
-      const data = await response.json();
+        const data = await response.json();
+        console.log('await res', data);
       setWords(data); // Инициализация состояния tasks через контекст
     } catch (error) {
       console.error("Error fetching tasks:", error);
