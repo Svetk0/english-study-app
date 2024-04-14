@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import Vocabulary from '../../components/Vocabulary/Vocabulary';
 import styles from "./VocabularyPage.module.css";
 import { WordContext } from "../../context/WordContext/WordContext";
+import AddNew from "../../components/AddNew/AddNew";
 
 const VocabularyPage = () => {
     const { words, setWords } = useContext(WordContext);
@@ -12,7 +13,8 @@ const VocabularyPage = () => {
     return (
         <>
             <div>
-            <h2 className="title">Vocabulary Page</h2>
+                <h2 className="title">Vocabulary Page</h2>
+                <AddNew/>
             <table>
                     <tr className={ styles.mainLine}>
                     <th>Word</th>
