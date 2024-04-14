@@ -5,7 +5,8 @@ import { useEffect, useContext } from "react";
 import { WordContext } from "../../context/WordContext/WordContext";
 function Vocabulary({ rowData }) {
   const { words, setWords } = useContext(WordContext);
-  const {id, english, transcription, russian } = rowData;
+  const { id, english, transcription, russian } = rowData;
+  
   const [errors, setErrors] = useState({
     english: false,
     transcription: false,
@@ -69,7 +70,7 @@ function Vocabulary({ rowData }) {
   const handleDelete = (id) => {
     console.log('delete id', id);
     setWords(words.filter((task) => task.id !== id)); // local deleting
-
+    console.log('check values', value);
 
   };
 
