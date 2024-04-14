@@ -1,9 +1,10 @@
 //card word
 import { useState } from "react";
 import styles from "./Vocabulary.module.css";
-import { useEffect } from "react";
-
+import { useEffect, useContext } from "react";
+import { WordContext } from "../../context/WordContext/WordContext";
 function Vocabulary({ rowData }) {
+  const { words, setWords } = useContext(WordContext);
   const {id, english, transcription, russian } = rowData;
   const [errors, setErrors] = useState({
     english: false,
@@ -65,6 +66,13 @@ function Vocabulary({ rowData }) {
     setIsSelected(!isSelected);
   };
 
+  const handleDelete = (id) => {
+    console.log('delete id', id);
+    setWords(words.filter((task) => task.id !== id)); // local deleting
+
+
+  };
+
 
   
   return isSelected ? (
@@ -124,7 +132,9 @@ function Vocabulary({ rowData }) {
         </button>
       </td>
       <td className={styles.tdButtons}>
-        <button className={styles.btnDelete}>Delete</button>
+          <button className={styles.btnDelete}
+            onClick={() => handleDelete(value.id)}
+          >Delete</button>
       </td>
     </tr>
   );

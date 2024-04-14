@@ -25,7 +25,7 @@ const VocabularyPage = () => {
                     return (
                         <Vocabulary
                             
-                            key={item.english}
+                            key={item.id}
                             rowData={ item}
                         
                     />
