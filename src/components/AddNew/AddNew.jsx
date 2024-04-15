@@ -15,25 +15,18 @@ const AddNew = () => {
     e.preventDefault();
       setEditedText({ ...text });
       postNewWord();
-    //setText("");
+
   };
   useEffect(() => {
-   // checkErrorsAreExist();
-  
 }, [text]);
 
   const handleChange = (event) => {
     setEditedText("");
-    //setText(e.target.value);
     setText((prevValue) => {
       return { ...prevValue, [event.target.name]: event.target.value };
     });
   };
-  const modifyText = (content) => {
-    const styledText = content.toUpperCase();
-    return styledText;
-  };
-    
+ 
   const postNewWord= async () => {
       try {
           text.id = Math.random()*10;
@@ -49,9 +42,7 @@ const AddNew = () => {
         throw new Error("Failed to ADD task");
       }
 
-      // Если задача успешно удалена на сервере, удаляем ее локально
-        console.log('ADD: : ',text.id, text.english);
-      //setWords(words.filter((task) => task.id !== taskId));
+     
     } catch (error) {
       console.error("Error ADDING task:", error);
     }
@@ -82,7 +73,11 @@ const AddNew = () => {
         />
         <input className={styles.form__button} type="submit" value="Add New" />
       </form>
-      <p>Your request: {editedText.english}</p>
+          <div>Your added a new word:
+              <br /> english: {editedText.english}
+              <br /> transcription: {editedText.transcription}
+              <br /> translation: {editedText.russian}
+          </div>
     </div>
   );
 };
