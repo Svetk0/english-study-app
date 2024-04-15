@@ -43,7 +43,7 @@ function Vocabulary({ rowData }) {
 }, [errors]);
 
   const checkErrorsAreExist = () => { 
-    if (errors.word || errors.transcription || errors.translation) {
+    if (errors.english || errors.transcription || errors.russian) {
       setBtnSaveDisabled(true);
       setErrorDescription('Field cannot be empty');
     }
