@@ -4,7 +4,7 @@ import { API_ADD_WORD } from "../../utils/constants";
 
 const AddNew = () => {
   const [text, setText] = useState({
-    id: Math.random(),
+    id: "",
     english: "",
     transcription: "",
     russian: "",
@@ -35,8 +35,9 @@ const AddNew = () => {
   };
     
   const postNewWord= async () => {
-    try {
-      
+      try {
+          text.id = Math.random()*10;
+        console.log('newPost', text);
       const response = await fetch(API_ADD_WORD, {
           method: "POST",
           //add object 
