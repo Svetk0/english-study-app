@@ -3,6 +3,9 @@ import { useState } from "react";
 import styles from "./Vocabulary.module.css";
 import { useEffect, useContext } from "react";
 import { WordContext } from "../../context/WordContext/WordContext";
+import { API_ALL_WORDS } from "../../utils/constants";
+
+
 function Vocabulary({ rowData }) {
   const { words, setWords } = useContext(WordContext);
   const { id, english, transcription, russian } = rowData;
@@ -67,10 +70,27 @@ function Vocabulary({ rowData }) {
     setIsSelected(!isSelected);
   };
 
-  const handleDelete = (id) => {
-    console.log('delete id', id);
-    setWords(words.filter((task) => task.id !== id)); // local deleting
-    console.log('check values', value);
+  const handleDelete = async (id) => {
+    try {
+     
+      const response = await fetch(`${API_ALL_WORDS}/${id}/delete`, {
+        method: "POST",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete task");
+      }
+
+      // Если задача успешно удалена на сервере, удаляем ее локально
+      console.log('delete id', id);
+      setWords(words.filter((task) => task.id !== id));
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
+   
+
+    // setWords(words.filter((task) => task.id !== id)); // local deleting
+    // console.log('check values', value);
 
   };
 
