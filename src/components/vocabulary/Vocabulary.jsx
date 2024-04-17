@@ -63,8 +63,6 @@ function Vocabulary({ rowData }) {
     setInputValue({ ...value });
     console.log('errors', errors);
     postChangesToServer(id);
-    
-
   };
 
   const postChangesToServer = async (id) => {
