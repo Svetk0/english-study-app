@@ -56,19 +56,42 @@ function Vocabulary({ rowData }) {
   const handleEdit = () => {
     setIsSelected(!isSelected);
   };
-  const handleSave = () => {
+
+  const handleSave = (id) => {
     setValue({ ...value });
     setIsSelected(!isSelected);
     setInputValue({ ...value });
-   
+    console.log('errors', errors);
+    postChangesToServer(id);
     
-    console.log('errors',errors);
+
   };
 
+  const postChangesToServer = async (id) => {
+    try {
+        value.id = Math.random() * 10;
+      value.tags_json = '';
+      value.tags = '';
+        console.log("Edited word: ", value);
+       // http://itgirlschool.justmakeit.ru/api/words/22/update 
+      const response = await fetch(`${API_ALL_WORDS}/${id}/update`, {
+        method: "POST",
+        //add object
+        body: JSON.stringify(value),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to EDIT task");
+      }
+    } catch (error) {
+      console.error("Error EDITED task:", error);
+    }
+  };
   const handleCancel = () => {
     setValue({ ...inputValue });
     setIsSelected(!isSelected);
   };
+
 
   const handleDelete = async (id) => {
     try {
@@ -129,7 +152,7 @@ function Vocabulary({ rowData }) {
       <td className={styles.tdButtons}>
         <button
           className={styles.btnSave}
-          onClick={handleSave}
+          onClick={() => handleSave(value.id)}
           disabled={ btnSaveDisabled}
         >
           
