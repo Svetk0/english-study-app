@@ -27,8 +27,15 @@ const AddNew = () => {
         });
         setIsSubmitDisabled('disabled');
     };
-
-  useEffect(() => {}, [text]);
+    const checkEmptyLines = () => { 
+        if ((text.english.trim() === '') ||
+            (text.transcription.trim() === '') ||
+            (text.russian.trim() === ''))
+        {
+            setIsSubmitDisabled('disabled');
+        }    
+    }
+    useEffect(() => { checkEmptyLines(); }, [text]);
 
   const handleChange = (event) => {
       setEditedText("");

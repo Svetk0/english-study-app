@@ -52,7 +52,8 @@ flex-direction: column;
     color: rgb(255, 255, 255);
     background-color:rgb(87, 98, 100);
     border: 1px solid rgb(255, 255, 255);
-    cursor:none;
+    cursor:pointer;
+    transform: scale(1);
     }
   .label_btn {
     color: transparent;
