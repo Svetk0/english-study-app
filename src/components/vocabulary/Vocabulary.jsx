@@ -9,7 +9,9 @@ import { API_ALL_WORDS } from "../../utils/constants";
 function Vocabulary({ rowData }) {
   const { words, setWords } = useContext(WordContext);
   const { id, english, transcription, russian } = rowData;
-  
+
+
+
   const [errors, setErrors] = useState({
     english: false,
     transcription: false,

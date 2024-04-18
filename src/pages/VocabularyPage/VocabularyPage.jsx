@@ -1,6 +1,6 @@
 
 //table of words
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Vocabulary from '../../components/Vocabulary/Vocabulary';
 import styles from "./VocabularyPage.module.css";
 import { WordContext } from "../../context/WordContext/WordContext";
@@ -8,7 +8,11 @@ import AddNew from "../../components/AddNew/AddNew";
 
 const VocabularyPage = () => {
     const { words, setWords } = useContext(WordContext);
-    //setWords(data);
+    useEffect(() => {
+        
+          
+      }, [words]);
+ 
     console.log('vocab',words);
     return (
         <>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./AddNew.module.css";
 import { API_ADD_WORD } from "../../utils/constants";
-
+import { WordContext } from "../../context/WordContext/WordContext";
 
 const AddNew = () => {
     const [isSubmit, setIsSubmit] = useState(false);
@@ -13,7 +13,7 @@ const AddNew = () => {
     russian: "",
   });
   const [editedText, setEditedText] = useState("");
-
+  const { words, setWords } = useContext(WordContext);
     const handleSubmit = (e) => {
         e.preventDefault();
         setEditedText({ ...text });
@@ -49,7 +49,7 @@ const AddNew = () => {
   const postNewWord = async () => {
     try {
         text.id = Math.random() * 10;
-       
+        setWords([...words, text]);
         console.log("newPost", text);
        
       const response = await fetch(API_ADD_WORD, {
