@@ -1,10 +1,12 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Card from "../../components/Card/CardWord";
+import { WordContext } from "../../context/WordContext/WordContext";
 import styles from "./CardPage.module.css";
 
 const CardPage = ({ dataList }) => {
-    const [data, setData] = useState(dataList);
+    const { words, setWords } = useContext(WordContext);
+    const [data, setData] = useState(words);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [learnedWords, setLearnedWords] = useState([]);
     const [showTranslation, setShowTranslation] = useState(false);
@@ -15,7 +17,7 @@ const CardPage = ({ dataList }) => {
 
     const checkCurrentIndex = (index) => {
         const isBackActive = index > 0;
-        const isNextActive = index < data.length - 1;
+        const isNextActive = index < words.length - 1;
         setBackBtnActive(isBackActive);
         setNextBtnActive(isNextActive);
     };
@@ -41,7 +43,7 @@ const CardPage = ({ dataList }) => {
     const handleCheck = (id) => {
         console.log('id', id);
         setShowTranslation(true);
-        learnedWords.push(data[id]);
+        learnedWords.push(words[id]);
         setLearnedWords(checkUniqueLearnedWord(learnedWords));
        
        
@@ -66,7 +68,7 @@ const CardPage = ({ dataList }) => {
           })
         setData(dataList);
         setCurrentIndex(0);
-        setLearnedWords([])
+        setLearnedWords([]);
         setShowTranslation(false);
         console.log('restart', data);
     }
@@ -88,19 +90,19 @@ const CardPage = ({ dataList }) => {
                 <div className={styles.cardItems_wrapper}>
                
                         <div className={styles.cardItems_learnedRestart}>
-                            <p>You have learned: {learnedWords.length}/{data.length}</p>
+                            <p>You have learned: {learnedWords.length}/{words.length}</p>
                             <button className={styles.button_restart}  onClick={restartGame}>
                     restart Game
                 </button>
                         </div>
                    
 
-                    {data.map((card, index) => (
-                        <div key={card.word} style={{ display: index === currentIndex ? "block" : "none" }}>
+                    {words.map((card, index) => (
+                        <div key={card.id} style={{ display: index === currentIndex ? "block" : "none" }}>
                             <Card
                                 transcription={card.transcription}
-                                translation={card.translation}
-                                word={card.word}
+                                translation={card.russian}
+                                word={card.english}
                                 isLearned={card.learned }
                                 clicked={showTranslation} // Передаем состояние showTranslation
                                 btnFunction={() => handleCheck(index)}
@@ -109,7 +111,7 @@ const CardPage = ({ dataList }) => {
                     ))}
 
                     <p>
-                        {currentIndex + 1}/{data.length}
+                        {currentIndex + 1}/{words.length}
                     </p>
                 </div>
 

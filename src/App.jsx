@@ -18,12 +18,12 @@ import VocabularyList from "./components/Vocabulary/VocabularyList";
 
 
 import { WordProvider } from "./context/WordContext/WordContext";
+
 function App() {
   useEffect(() => {
     document.title = "English study";
   }, []);
-  //const { words, setWords } = useContext(WordContext);
-
+ 
   return (
   
     <WordProvider>
@@ -42,7 +42,7 @@ function App() {
           />
           <Route
             path="/english-study-app/vocabulary"
-            element={<VocabularyPage data={data} />}
+            element={<VocabularyPage/>}
           />
             <Route
             path="/english-study-app/form"

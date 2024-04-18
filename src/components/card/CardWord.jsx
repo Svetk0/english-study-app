@@ -1,10 +1,12 @@
 //card word
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { WordContext } from "../../context/WordContext/WordContext";
 import styles from "./CardWord.module.css";
+
 
 function CardWord({ word, transcription, translation,isLearned,clicked, btnFunction }) {
   //const [clicked, setCliked] = useState(false);
-
+  const { words, setWords } = useContext(WordContext);
   return (
     <>
       <div className={!isLearned ? (styles.cardContainer ):( styles.cardContainer__learned )}>
