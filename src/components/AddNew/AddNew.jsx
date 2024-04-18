@@ -5,6 +5,7 @@ import { API_ADD_WORD } from "../../utils/constants";
 
 const AddNew = () => {
     const [isSubmit, setIsSubmit] = useState(false);
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState('');
   const [text, setText] = useState({
     id: "",
     english: "",
@@ -13,18 +14,25 @@ const AddNew = () => {
   });
   const [editedText, setEditedText] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEditedText({ ...text });
-    postNewWord();
-    setIsSubmit(true);
-    //setIsSubmit();
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setEditedText({ ...text });
+        postNewWord();
+        setIsSubmit(true);
+        setText({
+            id: "",
+            english: "",
+            transcription: "",
+            russian: "",
+        });
+        setIsSubmitDisabled('disabled');
+    };
 
   useEffect(() => {}, [text]);
 
   const handleChange = (event) => {
       setEditedText("");
+      setIsSubmitDisabled('');
       setIsSubmit(false);
     setText((prevValue) => {
       return { ...prevValue, [event.target.name]: event.target.value };
@@ -93,7 +101,7 @@ const AddNew = () => {
               </div>
               <div className={styles.input_wrapper}>
                   <label className={ styles.label_btn} htmlFor=""> ''</label>
-                  <input className={styles.form__button} type="submit" value="Add New" />
+                  <input className={styles.form__button} type="submit" value="Add New" disabled={ isSubmitDisabled} />
                   </div>
       </form>
       <div className={isSubmit ? styles.newWord : styles.newWord__off}>

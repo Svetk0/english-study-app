@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useContext } from "react";
-import Card from "../../components/Card/CardWord";
+import Card from "../../components/CardWord/CardWord";
 import { WordContext } from "../../context/WordContext/WordContext";
 import styles from "./CardPage.module.css";
 
