@@ -16,15 +16,15 @@ function Header() {
           <li className="menu-link">
             <Link to="/english-study-app/vocabulary">Vocabulary</Link>
           </li>
-          <li className="menu-link">
+          {/* <li className="menu-link">
             <Link to="/english-study-app/vocabulary-list">V List</Link>
-          </li>
+          </li> */}
           <li className="menu-link">
             <Link to="/english-study-app/cards">Cards</Link>
           </li>
-          <li className="menu-link">
+          {/* <li className="menu-link">
             <Link to="/english-study-app/train">Train mode</Link>
-          </li>
+          </li> */}
           <li className="menu-link">
             <Link to="/english-study-app/form">Search</Link>
           </li>
