@@ -18,8 +18,13 @@ function Header() {
           </li>
          
           <li className="menu-link">
+            <Link to="/english-study-app/test">V-List-test</Link>
+          </li>
+          
+          <li className="menu-link">
             <Link to="/english-study-app/cards">Cards</Link>
           </li>
+
           {/* <li className="menu-link">
             <Link to="/english-study-app/train">Train mode</Link>
           </li> */}

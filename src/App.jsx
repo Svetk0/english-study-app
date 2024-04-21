@@ -10,21 +10,29 @@ import TrainMode from "./components/TrainMode/TrainMode";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Footer from "./components/Footer/Footer";
 import Form2 from "./components/Form/Form";
+import WordStore from "./mobx/WordStore";
+import { Provider } from "mobx-react";
+import VocabularyList from "./components/Vocabulary/VocabularyListMobx";
 
 import { data } from "./store/store.js";
-
 import "./App.css";
 
+
+const store = {
+  wordStore: new WordStore(),
+};
 
 function App() {
   useEffect(() => {
     document.title = "English study";
   }, []);
 
+ 
   return (
   
 
     <Router>
+      <Provider {...store}>
       <div className="App-container">
         <Header />
 
@@ -48,12 +56,17 @@ function App() {
           <Route path="/english-study-app/train"
             element={<TrainMode />} />
           
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/english-study-app/test"
+            element={<VocabularyList />} />
+            
+            <Route path="*" element={<NotFoundPage />} />
+            
         </Routes>
         <Footer/>
-      </div>
+        </div>
+        </Provider>
       </Router>
-
+    
   );
 }
 
