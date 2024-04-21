@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { API_ALL_WORDS } from "../../utils/constants";
+import { API_ALL_WORDS } from "../utils/apiUrls";
 class WordStore {
   words = [];
 
@@ -10,7 +10,7 @@ class WordStore {
   loadData = async () => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos"
+        API_ALL_WORDS
       );
       if (!response.ok) {
         throw new Error("Failed to fetch words");

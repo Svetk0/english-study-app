@@ -9,7 +9,7 @@ return (
       {words.map((task) => (
         <div key={task.id} className='todo-item'>
           <input type='checkbox' checked={task.completed} readOnly />
-          <span>{task.title}</span>
+          <span>{task.english}</span>
           <button>Delete</button>
         </div>
       ))}
