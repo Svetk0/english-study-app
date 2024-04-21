@@ -6,6 +6,7 @@ import { inject, observer } from "mobx-react";
 import Vocabulary from '../../components/Vocabulary/Vocabulary';
 
 import styles from "./VocabularyPage.module.css";
+import AddWord from "../../components/AddWord/AddWord";
 
 
 
@@ -15,7 +16,8 @@ const VocabularyPage = ({ words}) => {
     return (
         <>
             <div>
-            <h2 className="title">Vocabulary Page</h2>
+                <h2 className="title">Vocabulary Page</h2>
+                <AddWord/>
             <table>
                     <tr className={ styles.mainLine}>
                     <th>Word</th>
