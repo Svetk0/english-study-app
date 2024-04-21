@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import Card from "../../components/Card/CardWord";
+import Card from "../../components/CardWord/CardWord";
 import styles from "./CardPage.module.css";
 
 const CardPage = ({ dataList }) => {
