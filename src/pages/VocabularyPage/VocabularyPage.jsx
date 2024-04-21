@@ -5,6 +5,7 @@ import Vocabulary from '../../components/Vocabulary/Vocabulary';
 import styles from "./VocabularyPage.module.css";
 import { WordContext } from "../../context/WordContext/WordContext";
 import AddNew from "../../components/AddNew/AddNew";
+import LED from "../../components/LED/LED";
 
 const VocabularyPage = () => {
     const { words, setWords } = useContext(WordContext);
@@ -18,7 +19,8 @@ const VocabularyPage = () => {
         <>
             <div>
                 <h2 className="title">Vocabulary Page</h2>
-                <AddNew/>
+                <AddNew />
+                <LED />
             <table>
                     <tr className={ styles.mainLine}>
                     <th>Word</th>
