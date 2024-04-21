@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { inject, observer } from "mobx-react";
 
-const VocabularyList = ({ words}) => { 
+const VocabularyListMobx = ({ words}) => { 
 //mobx test
 return (
     <div className='todo-list'>
@@ -30,7 +30,7 @@ export default inject(({ wordStore }) => {
       words,
       loadData,
     };
-  })(observer(VocabularyList));
+  })(observer(VocabularyListMobx));
 
 
 

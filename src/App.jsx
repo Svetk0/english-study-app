@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Form2 from "./components/Form/Form";
 import WordStore from "./mobx/WordStore";
 import { Provider } from "mobx-react";
-import VocabularyList from "./components/Vocabulary/VocabularyListMobx";
+import VocabularyListMobx from "./components/Vocabulary/VocabularyListMobx";
 
 import { data } from "./store/store.js";
 import "./App.css";
@@ -47,7 +47,7 @@ function App() {
           />
           <Route
             path="/english-study-app/vocabulary"
-            element={<VocabularyPage data={data} />}
+            element={<VocabularyPage  />}
           />
             <Route
             path="/english-study-app/form"
@@ -57,7 +57,7 @@ function App() {
             element={<TrainMode />} />
           
           <Route path="/english-study-app/test"
-            element={<VocabularyList />} />
+            element={<VocabularyListMobx />} />
             
             <Route path="*" element={<NotFoundPage />} />
             

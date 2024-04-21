@@ -1,10 +1,15 @@
 
 //table of words
+import { useState, useEffect } from "react";
+import { inject, observer } from "mobx-react";
+
 import Vocabulary from '../../components/Vocabulary/Vocabulary';
+
 import styles from "./VocabularyPage.module.css";
 
 
-const VocabularyPage = ({ data}) => {
+
+const VocabularyPage = ({ words}) => {
 
   
     return (
@@ -19,11 +24,11 @@ const VocabularyPage = ({ data}) => {
                         <th></th>
                         <th></th>
                 </tr>
-                {data.map((item) => {
+                {words.map((item) => {
                     return (
                         <Vocabulary
                             
-                            key={item.word}
+                            key={item.id}
                             rowData={ item}
                         
                     />
@@ -34,4 +39,16 @@ const VocabularyPage = ({ data}) => {
         </>
     );
 };
-export default VocabularyPage;
+
+export default inject(({ wordStore }) => {
+    const { words, loadData } = wordStore;
+  
+    useEffect(() => {
+      loadData();
+    }, []);
+  
+    return {
+      words,
+      loadData,
+    };
+  })(observer(VocabularyPage));
