@@ -7,10 +7,8 @@ import { API_ALL_WORDS } from "../../utils/apiUrls";
 import styles from "./Vocabulary.module.css";
 
 function Vocabulary({ rowData }) {
- //const { words, setWords } = useContext(WordContext);
+
   const { id, english, transcription, russian } = rowData;
-
-
 
   const [errors, setErrors] = useState({
     english: false,
@@ -31,7 +29,7 @@ function Vocabulary({ rowData }) {
   const [inputValue, setInputValue] = useState({ ...value });
 
   function getValue(event) {
-    // setInputValue({ ...value });
+
     setValue((prevValue) => {
       return { ...prevValue, [event.target.name]: event.target.value };
       
