@@ -1,6 +1,6 @@
 //card word
 import { useState, useEffect } from "react";
-import { inject, observer } from "mobx-react";
+//import { inject, observer } from "mobx-react";
 
 import { API_ALL_WORDS } from "../../utils/apiUrls";
 
@@ -179,15 +179,17 @@ function Vocabulary({ rowData }) {
     </tr>
   );
 }
-export default inject(({ wordStore }) => {
-  const { words, loadData } = wordStore;
+export default Vocabulary;
 
-  useEffect(() => {
-    loadData();
-  }, []);
+// export default inject(({ wordStore }) => {
+//   const { words, loadData } = wordStore;
 
-  return {
-    words,
-    loadData,
-  };
-})(observer(Vocabulary));
+//   useEffect(() => {
+//     loadData();
+//   }, []);
+
+//   return {
+//     words,
+//     loadData,
+//   };
+// })(observer(Vocabulary));
