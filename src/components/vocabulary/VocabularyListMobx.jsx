@@ -1,9 +1,9 @@
+//mobx test
 
 import React, { useEffect } from "react";
 import { inject, observer } from "mobx-react";
 
 const VocabularyListMobx = ({ words}) => { 
-//mobx test
 return (
     <div className='todo-list'>
       {words.map((task) => (

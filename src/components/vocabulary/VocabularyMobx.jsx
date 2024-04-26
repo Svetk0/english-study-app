@@ -1,13 +1,10 @@
-//card word
 import { useState, useEffect } from "react";
+import styles from "./Vocabulary.module.css";
 import { inject, observer } from "mobx-react";
 
-import { API_ALL_WORDS } from "../../utils/apiUrls";
+//vocabulary mobx
 
-import styles from "./Vocabulary.module.css";
-
-function Vocabulary({ rowData }) {
-
+function Vocabulary({ rowData, updateWord, deleteWord }) {
   const { id, english, transcription, russian } = rowData;
 
   const [errors, setErrors] = useState({
@@ -15,113 +12,63 @@ function Vocabulary({ rowData }) {
     transcription: false,
     russian: false,
   });
-  const [errorDescription, setErrorDescription] = useState('');
+  const [errorDescription, setErrorDescription] = useState("");
   const [value, setValue] = useState({
-    id:id,
+    id: id,
     english: english,
     transcription: transcription,
     russian: russian,
   });
- 
+
   const [isSelected, setIsSelected] = useState(false);
   const [btnSaveDisabled, setBtnSaveDisabled] = useState(false);
-  //const [value, setValue] = useState({ ...rowData });
   const [inputValue, setInputValue] = useState({ ...value });
 
   function getValue(event) {
-
     setValue((prevValue) => {
       return { ...prevValue, [event.target.name]: event.target.value };
-      
     });
+
     setErrors({ ...errors, [event.target.name]: !event.target.value.trim() });
-    
   }
+
   useEffect(() => {
     checkErrorsAreExist();
-  
-}, [errors]);
+  }, [errors]);
 
-  const checkErrorsAreExist = () => { 
+  const checkErrorsAreExist = () => {
     if (errors.english || errors.transcription || errors.russian) {
       setBtnSaveDisabled(true);
-      setErrorDescription('Field cannot be empty');
-    }
-    else { 
+      setErrorDescription("Field cannot be empty");
+    } else {
       setBtnSaveDisabled(false);
     }
-    console.log('btnSave', btnSaveDisabled);
-  }
+  };
 
   const handleEdit = () => {
     setIsSelected(!isSelected);
   };
 
-  const handleSave = (id) => {
-    setValue({ ...value });
+  const handleSave = () => {
+    updateWord(value);
+
     setIsSelected(!isSelected);
-    setInputValue({ ...value });
-    console.log('errors', errors);
-    postChangesToServer(id);
-    
   };
 
-  const postChangesToServer = async (id) => {
-    try {
-        value.id = Math.random() * 10;
-      value.tags_json = '';
-      value.tags = '';
-        console.log("Edited word: ", value);
-       // http://itgirlschool.justmakeit.ru/api/words/22/update 
-      const response = await fetch(`${API_ALL_WORDS}/${id}/update`, {
-        method: "POST",
-        //add object
-        body: JSON.stringify(value),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to EDIT task");
-      }
-    } catch (error) {
-      console.error("Error EDITED task:", error);
-    }
-  };
   const handleCancel = () => {
     setValue({ ...inputValue });
     setIsSelected(!isSelected);
   };
 
-
   const handleDelete = async (id) => {
-    try {
-     
-      const response = await fetch(`${API_ALL_WORDS}/${id}/delete`, {
-        method: "POST",
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to delete task");
-      }
-
-      // Если задача успешно удалена на сервере, удаляем ее локально
-      console.log('delete id', id);
-      //setWords(words.filter((task) => task.id !== id));
-    } catch (error) {
-      console.error("Error deleting task:", error);
-    }
-   
-
-
+    deleteWord(id);
   };
 
-
-  
   return isSelected ? (
-
     <tr className={styles.cardContainer}>
       <td>
         <input
-          className = { errors.english  ? styles.errorInput : styles.tableInput}
+          className={errors.english ? styles.errorInput : styles.tableInput}
           type="text"
           onChange={getValue}
           value={value.english}
@@ -130,7 +77,9 @@ function Vocabulary({ rowData }) {
       </td>
       <td>
         <input
-       className = { errors.transcription  ? styles.errorInput : styles.tableInput}
+          className={
+            errors.transcription ? styles.errorInput : styles.tableInput
+          }
           type="text"
           onChange={getValue}
           value={value.transcription}
@@ -139,7 +88,7 @@ function Vocabulary({ rowData }) {
       </td>
       <td>
         <input
-        className = { errors.russian  ? styles.errorInput : styles.tableInput}
+          className={errors.russian ? styles.errorInput : styles.tableInput}
           type="text"
           onChange={getValue}
           value={value.russian}
@@ -150,9 +99,8 @@ function Vocabulary({ rowData }) {
         <button
           className={styles.btnSave}
           onClick={() => handleSave(value.id)}
-          disabled={ btnSaveDisabled}
+          disabled={btnSaveDisabled}
         >
-          
           Save
         </button>
       </td>
@@ -173,22 +121,22 @@ function Vocabulary({ rowData }) {
         </button>
       </td>
       <td className={styles.tdButtons}>
-          <button className={styles.btnDelete}
-            onClick={() => handleDelete(value.id)}
-          >Delete</button>
+        <button
+          className={styles.btnDelete}
+          onClick={() => handleDelete(value.id)}
+        >
+          Delete
+        </button>
       </td>
     </tr>
   );
 }
-// export default Vocabulary;
 
-export default inject(({wordStore}) => {
-  const {updateWord, deleteWord} = wordStore;
-  
+export default inject(({ wordStore }) => {
+  const { updateWord, deleteWord } = wordStore;
+
   return {
-  updateWord,
-  deleteWord,
+    updateWord,
+    deleteWord,
   };
 })(observer(Vocabulary));
-  
-  

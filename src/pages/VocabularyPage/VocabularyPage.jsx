@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { inject, observer } from "mobx-react";
 
-import Vocabulary from '../../components/Vocabulary/Vocabulary';
+import Vocabulary from '../../components/Vocabulary/VocabularyMobx';
 
 import styles from "./VocabularyPage.module.css";
 import AddWord from "../../components/AddWord/AddWord";
