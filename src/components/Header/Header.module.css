@@ -1,4 +1,4 @@
-.header-container{
+.header_container{
 background-color: rgb(5, 84, 94);
 width: 100vw;
 }
@@ -19,7 +19,7 @@ width: 100vw;
     color: rgb(255, 187, 0);
    
 }
-.menu-header {
+.menuHeader {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -29,7 +29,7 @@ width: 100vw;
    
 }
 
-.menu-list__container {
+.menuList__container {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -37,7 +37,7 @@ width: 100vw;
     list-style-type: none;
     }
     
-    .menu-list__container a {
+    .menuList__container a {
     display: block;
     margin: 0 10px;
     padding: 7px 10px;
@@ -51,20 +51,20 @@ width: 100vw;
    transition: 0.4s ease all;
     /* cursor: pointer; */
     }
-    .menu-list__container a:hover {
+    .menuList__container a:hover {
         border: 1px solid #fff;
        transform: scale(1.08);
         text-shadow: none;
         border-radius: 3px;
     }
 
-    .lmenu-list__container :global(a.active){
+    .menuList__container :global(a.active){
         border: 2px solid var(--color-violet);
         color: var(--color-violet);
         text-shadow: none;
         border-radius: var(--border-radius-small);
     }
-.menu-link { 
+.menuLink { 
 color: #fff;
 text-decoration: none;
 }
