@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import { WordContext } from "./context/WordContext/WordContext";
-import Header from "./components/Header/Header";
+import Header from "./components/header1/Header";
 
 import HomePage from "./pages/HomePage/HomePage";
 import CardPage from "./pages/CardPage/CardPage";
@@ -14,7 +14,7 @@ import "./App.css";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Footer from "./components/Footer/Footer";
 import Form2 from "./components/Form/Form";
-import VocabularyList from "./components/Vocabulary/VocabularyList";
+import VocabularyList from "./components/vocabulary1/VocabularyList";
 
 
 import { WordProvider } from "./context/WordContext/WordContext";

@@ -1,7 +1,7 @@
 
 //table of words
 import React, { useContext, useEffect } from "react";
-import Vocabulary from '../../components/Vocabulary/Vocabulary';
+import Vocabulary from '../../components/vocabulary1/Vocabulary';
 import styles from "./VocabularyPage.module.css";
 import { WordContext } from "../../context/WordContext/WordContext";
 import AddNew from "../../components/AddNew/AddNew";
