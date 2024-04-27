@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./AddWord.module.css";
 import { API_ADD_WORD } from "../../utils/apiUrls";
+
+import { inject, observer } from "mobx-react";
 //import { WordContext } from "../../context/WordContext/WordContext";
 
-const AddWord = () => {
+const AddWord = ({ addWordLocal}) => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isSubmitDisabled, setIsSubmitDisabled] = useState("");
   const [text, setText] = useState({
@@ -22,7 +24,8 @@ const AddWord = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setEditedText({ ...text });
-    postNewWord();
+      postNewWord();
+      addWordLocal(text);
     setIsSubmit(true);
     setText({
       id: "",
@@ -139,4 +142,10 @@ const AddWord = () => {
   );
 };
 
-export default AddWord;
+export default inject(({ wordStore }) => {
+    const { addWordLocal } = wordStore;
+  
+    return {
+        addWordLocal,
+    };
+  })(observer(AddWord));

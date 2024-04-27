@@ -34,6 +34,14 @@ import { makeAutoObservable } from "mobx";
   console.error("Error deleting word:", error);
   }
   };
+      
+      addWordLocal = (newWord) => {
+          console.log('before: ',  newWord, this.words );  
+          this.words = this.words.push(newWord);
+          console.log('after: ',   this.words ); 
+      }
+      
+
   
   updateWord = async (updatedWord) => {
   const body = {
