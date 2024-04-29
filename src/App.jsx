@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
 
-import Header from "./components/header1/Header";
+import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import CardPage from "./pages/CardPage/CardPage";
 import VocabularyPage from "./pages/VocabularyPage/VocabularyPage";
@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Form2 from "./components/Form/Form";
 import WordStore from "./mobx/WordStore";
 import { Provider } from "mobx-react";
-import VocabularyListMobx from "./components/vocabulary1/VocabularyListMobx";
+import VocabularyListMobx from "./components/Vocabulary/VocabularyListMobx";
 
 import { data } from "./store/store.js";
 import "./App.css";
