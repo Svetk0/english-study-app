@@ -143,9 +143,10 @@ const AddWord = ({ addWordLocal}) => {
 };
 
 export default inject(({ wordStore }) => {
-    const { addWordLocal } = wordStore;
+    const { words,addWordLocal } = wordStore;
   
     return {
         addWordLocal,
+        words,
     };
   })(observer(AddWord));

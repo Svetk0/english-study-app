@@ -37,7 +37,15 @@ import { makeAutoObservable } from "mobx";
       
       addWordLocal = (newWord) => {
           console.log('before: ',  newWord, this.words );  
-          this.words = this.words.push(newWord);
+          this.words = [
+              ...this.words,
+              {
+                  english: newWord.english,
+                  transcription: newWord.transcription,
+                  russian: newWord.russian,
+
+              }
+          ];
           console.log('after: ',   this.words ); 
       }
       
