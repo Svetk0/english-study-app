@@ -34,6 +34,22 @@ import { makeAutoObservable } from "mobx";
   console.error("Error deleting word:", error);
   }
   };
+      
+      addWordLocal = (newWord) => {
+          console.log('before: ',  newWord, this.words );  
+          this.words = [
+              ...this.words,
+              {
+                  english: newWord.english,
+                  transcription: newWord.transcription,
+                  russian: newWord.russian,
+
+              }
+          ];
+          console.log('after: ',   this.words ); 
+      }
+      
+
   
   updateWord = async (updatedWord) => {
   const body = {

@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 
 import styles from "./Header.module.css";
 
+
 // <h1 className={styles.header}>English study app</h1>
 
 function Header() {
   return (
+
     <div className={ styles.header_container} >
       <h1 className={ styles.header}><Link to="/english-study-app">English study app</Link></h1>
       <nav className={ styles.menuHeader}>
@@ -26,6 +28,7 @@ function Header() {
             <Link to="/english-study-app/train">Train mode</Link>
           </li>
           <li className={ styles.menuLink}>
+
             <Link to="/english-study-app/form">Search</Link>
           </li>
         </ul>
@@ -33,4 +36,6 @@ function Header() {
     </div>
   );
 }
+
 export default Header;
+
